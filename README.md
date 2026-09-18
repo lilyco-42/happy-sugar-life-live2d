@@ -3,8 +3,6 @@
 > 从一张 AI 立绘到可循环播放的骨骼动画（转头 / 眨眼 / 呼吸），全流程可复现。
 > From a single AI illustration to a loopable bone-animated character (head-turn / blink / breathe) — fully reproducible pipeline.
 
-**官方风格立绘版（2026-09-18 新增）**：`assets/sato_official_anim_v1.mp4` + `assets/sato_official_rig_v1.stretch`。基于官方动画人设图（动漫星空 2018 人设页）参考生成立绘，修正为 **深蓝 blazer + 红条纹领结**（用户确认的官方服装），走同一管线：see-through 13 层分层 → Stretchy 自动绑骨 → 本地改 `project.json` 注入 v10 同款三轨动画（head ±6° 转头 / eyes 一次眨眼 / torso 呼吸）→ 48 帧导出 → ffmpeg 合成。
-
 **成果演示 · Result**（`assets/sato_live2d_anim_v10.mp4`，48 帧 / 24fps / 2s 循环，**v10 = 骨骼关节全量校正版**）：
 
 | 动画 | 骨骼 | 轨道 |
@@ -93,10 +91,7 @@ image_gen(立绘) → remove-image-background(抠图) → make_upper.py(裁方)
 │   └── verify_frames.py   # 帧回归验证（白眼/分离/偏移检测）
 └── assets/
     ├── sato_upper.png            # 砂糖立绘（1597² 透明底）
-    ├── sato_upper_official_v2.png # 官方风格立绘（blazer+红条纹领结）
     ├── shio_upper.png            # 盐立绘（1597² 透明底）
-    ├── sato_official_anim_v1.mp4   # 官方风格立绘动画（v1）
-    ├── sato_official_rig_v1.stretch # 官方风格可编辑工程（v1）
     ├── sato_live2d_anim_v10.mp4   # 最新动画演示（v10 骨骼校正版）
     ├── sato_sugar_rig_v10.stretch # 最新可编辑工程（v10）
     ├── sato_live2d_anim_v9.mp4    # v9 动画（历史版）
